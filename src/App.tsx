@@ -11,10 +11,7 @@ import {
   downloadCSV,
   formatTimeForDisplay,
 } from './utils/transactionUtils'
-import {
-  saveTransactionsToStorage,
-  loadTransactionsFromStorage,
-} from './utils/localStorage'
+
 import type { Transaction, Filters, SortOrder } from './types'
 import {
   AppContainer,
@@ -63,14 +60,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
 
-  // Load transactions from localStorage on mount
-  useEffect(() => {
-    const savedTransactions = loadTransactionsFromStorage()
-    if (savedTransactions.length > 0) {
-      setTransactions(savedTransactions)
-    }
-  }, [])
-
   // Update filtered transactions when transactions or filters change
   useEffect(() => {
     let filtered = filterTransactions(transactions, filters)
@@ -116,7 +105,6 @@ function App() {
 
       if (result.transactions.length > 0) {
         setTransactions(result.transactions)
-        saveTransactionsToStorage(result.transactions)
 
         Toast.show({
           content: `Завантажено ${result.transactions.length} транзакцій`,

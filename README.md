@@ -8,7 +8,6 @@ A mobile-style bank transactions viewer that imports data from Excel (.xlsx) fil
 - **Mobile UI**: Mobile-first design with a banking app look and feel
 - **Smart Filtering**: Search by merchant/purchase, date range, and amount filters
 - **Ukrainian Support**: Full Ukrainian language support and currency formatting
-- **Data Persistence**: Automatically saves imported data to localStorage
 - **Export**: Export filtered transactions to CSV format
 - **Real-time Validation**: Shows parsing errors and validation warnings
 
@@ -89,7 +88,6 @@ Date        | Time  | Store     | Purchase      | Cost
 2. **View Transactions**: Browse transactions grouped by date in a mobile banking style
 3. **Filter Data**: Use the search box and filters to find specific transactions
 4. **Export Results**: Click the 💾 button to export filtered data to CSV
-5. **Persistent Storage**: Data is automatically saved and restored between sessions
 
 ## 🧪 Testing
 
@@ -98,7 +96,6 @@ The project includes comprehensive tests covering:
 - ✅ Excel parsing and header mapping
 - ✅ Transaction validation and normalization
 - ✅ Filtering and sorting functionality
-- ✅ Data storage and retrieval
 - ✅ Component rendering
 
 Run tests with:
@@ -119,8 +116,7 @@ src/
 │   └── index.ts           # TypeScript type definitions
 ├── utils/
 │   ├── excelParser.ts     # Excel parsing and validation logic
-│   ├── transactionUtils.ts # Transaction filtering and formatting
-│   └── localStorage.ts    # Data persistence utilities
+│   └── transactionUtils.ts # Transaction filtering and formatting
 ├── test/
 │   ├── setup.ts           # Test configuration
 │   ├── *.test.ts          # Test files
@@ -155,7 +151,6 @@ src/
 - Real-time filtering and searching
 - Sorting by date (newest/oldest first)
 - Amount range filtering
-- Persistent storage across browser sessions
 
 ### Error Handling
 
