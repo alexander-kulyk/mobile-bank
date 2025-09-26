@@ -1,0 +1,38 @@
+<svg width="400" height="100%" viewBox="0 0 400 1000" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone Shadow -->
+  <ellipse cx="200" cy="980" rx="180" ry="20" fill="rgba(0,0,0,0.1)"/>
+  
+  <!-- Phone Body -->
+  <rect x="20" y="20" width="360" height="940" rx="60" fill="url(#phoneGradient)" stroke="url(#phoneStroke)" stroke-width="2"/>
+  
+  <!-- Screen Area -->
+  <rect x="35" y="80" width="330" height="840" rx="45" fill="#000000"/>
+  
+  <!-- Screen -->
+  <rect x="40" y="85" width="320" height="830" rx="40" fill="#ffffff"/>
+  
+  <!-- Top Notch -->
+  <rect x="160" y="20" width="80" height="35" rx="17.5" fill="#1a1a1a"/>
+  
+  <!-- Home Indicator -->
+  <rect x="180" y="950" width="40" height="4" rx="2" fill="#666666"/>
+  
+  <!-- Side Buttons -->
+  <rect x="15" y="180" width="5" height="40" rx="2.5" fill="#cccccc"/>
+  <rect x="15" y="240" width="5" height="60" rx="2.5" fill="#cccccc"/>
+  <rect x="15" y="320" width="5" height="60" rx="2.5" fill="#cccccc"/>
+  
+  <!-- Power Button -->
+  <rect x="380" y="250" width="5" height="50" rx="2.5" fill="#cccccc"/>
+  
+  <defs>
+    <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568"/>
+      <stop offset="100%" style="stop-color:#2d3748"/>
+    </linearGradient>
+    <linearGradient id="phoneStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096"/>
+      <stop offset="100%" style="stop-color:#4a5568"/>
+    </linearGradient>
+  </defs>
+</svg>
