@@ -5,7 +5,7 @@ export const AppContainer = styled.div`
   max-width: 400px;
   margin: 0 auto;
   height: 100vh;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   position: relative;
   padding: 0;
   overflow: hidden;
