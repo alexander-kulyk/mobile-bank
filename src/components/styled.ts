@@ -5,7 +5,7 @@ export const AppContainer = styled.div`
   max-width: 400px;
   margin: 0 auto;
   height: 100vh;
-  background: #f8f9fa;
+  background: #ffffff;
   position: relative;
   padding: 0;
   overflow: hidden;
