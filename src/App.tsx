@@ -20,6 +20,7 @@ import {
   HeaderStats,
   StatItem,
   StatValue,
+  BalanceValue,
   StatLabel,
   ImportSection,
   ImportButton,
@@ -162,11 +163,13 @@ function App() {
         <HeaderTitle>Банківські транзакції</HeaderTitle>
         <HeaderStats>
           <StatItem>
-            <StatValue>{formatCurrency(summary.balance)}</StatValue>
+            <BalanceValue isNegative={summary.balance < 0}>
+              {formatCurrency(summary.balance)}
+            </BalanceValue>
             <StatLabel>Баланс</StatLabel>
           </StatItem>
           <StatItem>
-            <StatValue>{formatCurrency(-summary.spending)}</StatValue>
+            <StatValue>{formatCurrency(summary.spending)}</StatValue>
             <StatLabel>Витрати</StatLabel>
           </StatItem>
           <StatItem>
@@ -310,8 +313,8 @@ function App() {
                   <TransactionItem key={transaction.id}>
                     <TransactionHeader>
                       <MerchantName>{transaction.store}</MerchantName>
-                      <TransactionAmount isPositive={transaction.cost > 0}>
-                        {formatCurrency(transaction.cost)}
+                      <TransactionAmount isPositive={false}>
+                        {formatCurrency(-Math.abs(transaction.cost))}
                       </TransactionAmount>
                     </TransactionHeader>
                     <TransactionMeta>

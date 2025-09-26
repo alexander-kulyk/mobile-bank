@@ -141,20 +141,15 @@ export const groupTransactionsByDate = (
 
 // Calculate total balance and spending
 export const calculateSummary = (transactions: Transaction[]) => {
-  const spending = transactions
-    .filter((t) => t.cost < 0)
-    .reduce((sum, t) => sum + Math.abs(t.cost), 0)
+  const spending = transactions.reduce((sum, t) => sum + Math.abs(t.cost), 0)
 
-  const income = transactions
-    .filter((t) => t.cost > 0)
-    .reduce((sum, t) => sum + t.cost, 0)
-
-  const balance = income - spending
+  const defaultBalance = 1000 // Початковий баланс 1000 грн
+  const balance = defaultBalance - spending
 
   return {
     balance,
     spending,
-    income,
+    income: 0, // Якщо всі транзакції - витрати, то доходів немає
     totalTransactions: transactions.length,
   }
 }

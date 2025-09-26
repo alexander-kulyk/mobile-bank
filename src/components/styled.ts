@@ -51,6 +51,13 @@ export const StatValue = styled.div`
   margin-bottom: 4px;
 `
 
+export const BalanceValue = styled.div<{ isNegative: boolean }>`
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: ${(props) => (props.isNegative ? '#dc3545' : 'inherit')};
+`
+
 export const StatLabel = styled.div`
   font-size: 12px;
   opacity: 0.9;

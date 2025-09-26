@@ -130,9 +130,9 @@ describe('Transaction Utils', () => {
     it('should calculate summary correctly', () => {
       const result = calculateSummary(mockTransactions)
 
-      expect(result.spending).toBe(375.5) // 150.50 + 25.00 + 200.00
-      expect(result.income).toBe(15000.0)
-      expect(result.balance).toBe(14624.5) // 15000 - 375.50
+      expect(result.spending).toBe(15375.5) // 150.50 + 25.00 + 200.00 + 15000.00 (всі як витрати)
+      expect(result.income).toBe(0) // Немає доходів, всі транзакції - витрати
+      expect(result.balance).toBe(-14375.5) // 1000 - 15375.5 (початковий баланс 1000 грн мінус витрати)
       expect(result.totalTransactions).toBe(4)
     })
   })
